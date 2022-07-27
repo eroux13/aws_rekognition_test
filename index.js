@@ -23,3 +23,13 @@ let params = {
     MaxLabels: 10,
     MinConfidence: 80
 };
+
+// Call AWS Rekognition Class
+const rekognition = new AWS.Rekognition();
+
+// Detect Labels
+rekognition.detectLabels(params, function(err, data) {
+    if(err) console.log(err); // show error during occurance
+    else console.log(data); // show response
+});
+
